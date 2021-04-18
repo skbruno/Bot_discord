@@ -1,27 +1,7 @@
-var discord = require('discord.js');
-var app = new discord.Client();
+var app = require('./Config/discord.js');
 
-var token = "";
-
-app.on('ready', ()=>{
-
-        console.log('Bot iniciado');
-});
+var token = "ODMzMTE2MzI5MjU4OTA5NzI3.YHtqCw.mqq_6vAMgf28FT4QUmpYGVoaj5c";
 
 
-var prefix = "!#";
-app.on('message', message => {
-
-    if(message.author.bot) return;
-    if(message === null) return;
-    if(message.author === null) return;
-
-    if(message.content.startsWith(prefix)) return;
-
-    if(message.content.startsWith(prefix + "fala"))
-    {
-        message.channel.send(`${message.author}, quiepaunocu`);
-    }
-});
 
 app.login(token);
